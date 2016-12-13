@@ -13,11 +13,13 @@ RUN apt-get update && apt-get install -y \
       rm -rf /tmp/* && \
       rm -rf /var/tmp/*
 
-ENV PERCONA_VERSION 2.2.15
+ENV PERCONA_VERSION 2.2.20
+
+
 
 WORKDIR /tmp
-RUN wget https://www.percona.com/downloads/percona-toolkit/${PERCONA_VERSION}/deb/percona-toolkit_${PERCONA_VERSION}_all.deb && \
-    dpkg -i percona-toolkit_${PERCONA_VERSION}_all.deb && \
-    rm -f percona-toolkit_${PERCONA_VERSION}_all.deb
+RUN wget https://www.percona.com/downloads/percona-toolkit/2.2.20/deb/percona-toolkit_2.2.20-1_all.deb && \
+    dpkg -i percona-toolkit_2.2.20-1_all.deb && \
+    rm -f percona-toolkit_2.2.20-1_all.deb
 
 WORKDIR /
